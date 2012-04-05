@@ -54,6 +54,13 @@ public class TennisSetTest {
 		assertEquals("0 - 30", game.score());
 	}
 	
+	@Test 
+	public void testFourteenA() {
+		playGame(3, 3);
+		
+		assertEquals("40 A", game.score());
+	}
+	
 	private void playGame(int playerAScore, int playerBScore) {
 		for(int i = 0; i < playerAScore; i++)
 			game.playerAScores();
