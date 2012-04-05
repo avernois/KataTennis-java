@@ -2,12 +2,14 @@ package fr.craftinglabs.dojo.tennis;
 
 public class TennisSet {
 
+	String score = "0 A";
+	
 	public String score() {
-		return "0 A";
+		return score;
 	}
 
 	public void playerAScores() {
-		
+		score = "15 - 0";
 	}
 
 }
