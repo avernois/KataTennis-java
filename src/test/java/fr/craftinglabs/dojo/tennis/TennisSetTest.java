@@ -32,4 +32,20 @@ public class TennisSetTest {
 
 		assertEquals("0 - 15", game.score());
 	}
+	
+	@Test
+	public void testFifteenA() {
+		game.playerAScores();
+		game.playerBScores();
+		
+		assertEquals("15 A", game.score());
+	}
+	
+	@Test 
+	public void testThirteenZero() {
+		game.playerAScores();
+		game.playerAScores();
+		
+		assertEquals("30 - 0", game.score());
+	}
 }
