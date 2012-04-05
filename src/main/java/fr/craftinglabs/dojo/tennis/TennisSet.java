@@ -2,27 +2,39 @@ package fr.craftinglabs.dojo.tennis;
 
 public class TennisSet {
 
-	private String playerAScore = "0";
-	private String playerBScore = "0";
+	private int playerAScore = 0;
+	private int playerBScore = 0;
 
 	public String score() {
-		if (playerAScore.equals(playerBScore))
-			return playerAScore + " A";
-		return playerAScore + " - " + playerBScore;
+		String score;
+		
+		if (playerAScore == playerBScore) {
+			score = translate(playerAScore) + " A";
+		} else {
+			score = translate(playerAScore) + " - " + translate(playerBScore);
+		}
+	
+		return score;
 	}
 
 	public void playerAScores() {
-		playerAScore = increment(playerAScore);
+		playerAScore++;
 	}
 
 	public void playerBScores() {
-		playerBScore = increment(playerBScore);
+		playerBScore++;
 	}
 	
-	private String increment(String score) {
-		if (score.equals("15"))
-			return "30";
-		else
+	private String translate(int score) {
+		switch(score) {
+		case 0:
+			return "0";
+		case 1:
 			return "15";
+		case 2:
+			return "30";
+		default:
+			throw new IllegalArgumentException();
+		}
 	}
 }
