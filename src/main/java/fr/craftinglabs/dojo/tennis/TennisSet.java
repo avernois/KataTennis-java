@@ -13,7 +13,7 @@ public class TennisSet {
 	}
 
 	public void playerBScores() {
-		
+		score = "0 - 15";
 	}
 
 }
