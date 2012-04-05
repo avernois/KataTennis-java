@@ -6,4 +6,8 @@ public class TennisSet {
 		return "0 A";
 	}
 
+	public void playerAScores() {
+		
+	}
+
 }

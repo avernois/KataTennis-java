@@ -13,4 +13,13 @@ public class TennisSetTest {
 			
 			assertEquals("0 A", game.score());
 		}
+		
+		@Test
+		public void testFifteenZero() {
+			TennisSet game = new TennisSet();
+			
+			game.playerAScores();
+			
+			assertEquals("15 - 0", game.score());
+		}
 }
