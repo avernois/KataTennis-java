@@ -21,31 +21,38 @@ public class TennisSetTest {
 
 	@Test
 	public void testFifteenZero() {
-		game.playerAScores();
+		playGame(1, 0);
 
 		assertEquals("15 - 0", game.score());
 	}
 	
 	@Test
 	public void testZeroFifteen() {
-		game.playerBScores();
+		playGame(0, 1);
 
 		assertEquals("0 - 15", game.score());
 	}
 	
 	@Test
 	public void testFifteenA() {
-		game.playerAScores();
-		game.playerBScores();
+		playGame(1, 1);
 		
 		assertEquals("15 A", game.score());
 	}
 	
 	@Test 
 	public void testThirteenZero() {
-		game.playerAScores();
-		game.playerAScores();
+		playGame(2, 0);
 		
 		assertEquals("30 - 0", game.score());
+	}
+	
+	private void playGame(int playerAScore, int playerBScore) {
+		for(int i = 0; i < playerAScore; i++)
+			game.playerAScores();
+		
+		for(int i = 0; i < playerBScore; i++)
+			game.playerBScores();
+		
 	}
 }
