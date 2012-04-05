@@ -12,16 +12,17 @@ public class TennisSet {
 	}
 
 	public void playerAScores() {
-		if (playerAScore.equals("15"))
-			playerAScore = "30";
-		else
-			playerAScore = "15";
+		playerAScore = increment(playerAScore);
 	}
 
 	public void playerBScores() {
-		if (playerBScore.equals("15"))
-			playerBScore = "30";
+		playerBScore = increment(playerBScore);
+	}
+	
+	private String increment(String score) {
+		if (score.equals("15"))
+			return "30";
 		else
-			playerBScore = "15";
+			return "15";
 	}
 }
