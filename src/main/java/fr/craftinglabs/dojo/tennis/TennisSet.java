@@ -2,8 +2,8 @@ package fr.craftinglabs.dojo.tennis;
 
 public class TennisSet {
 
-	String playerAScore = "0";
-	String playerBScore = "0";
+	private String playerAScore = "0";
+	private String playerBScore = "0";
 
 	public String score() {
 		if (playerAScore.equals(playerBScore))
