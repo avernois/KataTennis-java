@@ -2,18 +2,20 @@ package fr.craftinglabs.dojo.tennis;
 
 public class TennisSet {
 
-	String score = "0 A";
-	
+	String playerAScore = "0";
+	String playerBScore = "0";
+
 	public String score() {
-		return score;
+		if (playerAScore.equals(playerBScore))
+			return playerAScore + " A";
+		return playerAScore + " - " + playerBScore;
 	}
 
 	public void playerAScores() {
-		score = "15 - 0";
+		playerAScore = "15";
 	}
 
 	public void playerBScores() {
-		score = "0 - 15";
+		playerBScore = "15";
 	}
-
 }
