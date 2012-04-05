@@ -12,7 +12,10 @@ public class TennisSet {
 	}
 
 	public void playerAScores() {
-		playerAScore = "15";
+		if (playerAScore.equals("15"))
+			playerAScore = "30";
+		else
+			playerAScore = "15";
 	}
 
 	public void playerBScores() {
