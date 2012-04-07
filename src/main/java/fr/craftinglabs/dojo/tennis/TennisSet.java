@@ -11,12 +11,9 @@ public class TennisSet {
 		if (playerAScore == playerBScore) {
 			score = translate(playerAScore) + " A";
 		} else {
-			if (hasPlayerAAdvantage()) {
-				score = "Advantage Player A";
-			} else if (hasPlayerBAdvantage()) {
-				score = "Advantage Player B";
-			}
-			else {
+			if (hasAPlayerAdvantage()) {
+				score = "Advantage " + advantagedPlayer();
+			} else {
 				score = translate(playerAScore) + " - " + translate(playerBScore);
 			}
 		}
@@ -24,12 +21,15 @@ public class TennisSet {
 		return score;
 	}
 
-	private boolean hasPlayerAAdvantage() {
-		return playerAScore >= 4 && playerAScore > playerBScore;
+	private boolean hasAPlayerAdvantage() {
+		return playerAScore >= 4 || playerBScore >= 4;
 	}
 	
-	private boolean hasPlayerBAdvantage() {
-		return playerBScore >= 4 && playerBScore > playerAScore;
+	private String advantagedPlayer() {
+		if (playerAScore > playerBScore)
+			return "Player A";
+		else
+			return "Player B";
 	}
 
 	public void playerAScores() {
