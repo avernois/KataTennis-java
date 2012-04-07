@@ -103,6 +103,13 @@ public class TennisSetTest {
 		assertEquals("Player A wins !", game.score());
 	}
 	
+	@Test
+	public void testPlayerBWins() {
+		playGame(4, 6);
+		
+		assertEquals("Player B wins !", game.score());
+	}
+	
 	private void playGame(int playerAScore, int playerBScore) {
 		for(int i = 0; i < playerAScore; i++)
 			game.playerAScores();
