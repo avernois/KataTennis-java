@@ -9,11 +9,7 @@ public class TennisSet {
 		String score;
 		
 		if (playerAScore == playerBScore) {
-			if (playerAScore > 3) {
-				score = "Deuce";
-			} else {
-				score = translate(playerAScore) + " A";
-			}
+			score = equalityScore();
 		} else {
 			if (hasAPlayerAdvantage()) {
 				score = "Advantage " + advantagedPlayer();
@@ -22,6 +18,17 @@ public class TennisSet {
 			}
 		}
 	
+		return score;
+	}
+
+	private String equalityScore() {
+		String score;
+		if (playerAScore > 3) {
+			score = "Deuce";
+		} else {
+			score = translate(playerAScore) + " A";
+		}
+		
 		return score;
 	}
 
