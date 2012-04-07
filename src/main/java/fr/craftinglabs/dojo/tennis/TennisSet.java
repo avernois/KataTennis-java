@@ -8,6 +8,9 @@ public class TennisSet {
 	public String score() {
 		String score;
 		
+		if (playerAScore == 4 && playerBScore < 3) 
+			return "Player A wins !";
+		
 		if (playerAScore == playerBScore) {
 			score = equalityScore();
 		} else {
