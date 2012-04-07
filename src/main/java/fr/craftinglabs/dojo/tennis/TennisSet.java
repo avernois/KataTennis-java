@@ -1,5 +1,6 @@
 package fr.craftinglabs.dojo.tennis;
 
+
 public class TennisSet {
 
 	private int playerAScore = 0;
@@ -41,7 +42,7 @@ public class TennisSet {
 	}
 
 	private boolean hasAWinner() {
-		return (playerAScore >= 4 && ((playerAScore - playerBScore) == 2)) || (playerBScore >= 4 && (playerBScore - playerAScore) == 2);
+		return (playerAScore >= 4 || playerBScore >= 4) && (Math.abs(playerBScore - playerAScore) == 2);
 	}
 
 	private String equalityScore() {
