@@ -41,7 +41,7 @@ public class TennisSet {
 	}
 
 	private boolean hasAWinner() {
-		return (playerAScore >= 4 && ((playerAScore - playerBScore) == 2)) || (playerBScore == 4 && playerAScore < 3);
+		return (playerAScore >= 4 && ((playerAScore - playerBScore) == 2)) || (playerBScore >= 4 && (playerBScore - playerAScore) == 2);
 	}
 
 	private String equalityScore() {
