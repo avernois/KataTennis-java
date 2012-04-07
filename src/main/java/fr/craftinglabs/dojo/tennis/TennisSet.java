@@ -11,6 +11,9 @@ public class TennisSet {
 		if (playerAScore == 4 && playerBScore < 3) 
 			return "Player A wins !";
 		
+		if (playerBScore == 4 && playerAScore < 3) 
+			return "Player B wins !";
+		
 		if (playerAScore == playerBScore) {
 			score = equalityScore();
 		} else {
