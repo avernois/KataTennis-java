@@ -13,7 +13,10 @@ public class TennisSet {
 		} else {
 			if (hasPlayerAAdvantage()) {
 				score = "Advantage Player A";
-			} else {
+			} else if (hasPlayerBAdvantage()) {
+				score = "Advantage Player B";
+			}
+			else {
 				score = translate(playerAScore) + " - " + translate(playerBScore);
 			}
 		}
@@ -23,6 +26,10 @@ public class TennisSet {
 
 	private boolean hasPlayerAAdvantage() {
 		return playerAScore >= 4 && playerAScore > playerBScore;
+	}
+	
+	private boolean hasPlayerBAdvantage() {
+		return playerBScore >= 4 && playerBScore > playerAScore;
 	}
 
 	public void playerAScores() {
