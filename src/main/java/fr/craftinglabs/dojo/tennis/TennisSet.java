@@ -11,7 +11,11 @@ public class TennisSet {
 		if (playerAScore == playerBScore) {
 			score = translate(playerAScore) + " A";
 		} else {
-			score = translate(playerAScore) + " - " + translate(playerBScore);
+			if (playerAScore >= 4 && playerAScore > playerBScore) {
+				score = "Advantage Player A";
+			} else {
+				score = translate(playerAScore) + " - " + translate(playerBScore);
+			}
 		}
 	
 		return score;
