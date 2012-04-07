@@ -9,7 +9,11 @@ public class TennisSet {
 		String score;
 		
 		if (playerAScore == playerBScore) {
-			score = translate(playerAScore) + " A";
+			if (playerAScore > 3) {
+				score = "Deuce";
+			} else {
+				score = translate(playerAScore) + " A";
+			}
 		} else {
 			if (hasAPlayerAdvantage()) {
 				score = "Advantage " + advantagedPlayer();
