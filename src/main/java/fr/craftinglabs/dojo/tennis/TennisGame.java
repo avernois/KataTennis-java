@@ -1,7 +1,6 @@
 package fr.craftinglabs.dojo.tennis;
 
-
-public class TennisSet {
+public class TennisGame {
 
 	private int playerAScore = 0;
 	private int playerBScore = 0;

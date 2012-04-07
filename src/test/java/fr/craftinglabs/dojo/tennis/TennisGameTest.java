@@ -5,13 +5,13 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TennisSetTest {
+public class TennisGameTest {
 
-	private TennisSet game;
+	private TennisGame game;
 
 	@Before
 	public void setup() {
-		game = new TennisSet();
+		game = new TennisGame();
 	}
 	
 	@Test
