@@ -5,3 +5,4 @@ This repository contains one (or more) implementation of the KataTennis in java.
 Branches
 --------
 * master : that branch only contains README and basic directory structure.
+* implem : an implementation of the kata.
