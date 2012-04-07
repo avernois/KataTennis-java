@@ -6,7 +6,9 @@ public class TennisSet {
 	private int playerBScore = 0;
 
 	public String score() {
-		String score;
+		
+		if (hasAWinner())
+			return playerWithHighestScore() + " wins !";
 		
 		if (playerAScore == 4 && playerBScore < 3) 
 			return "Player A wins !";
@@ -14,17 +16,32 @@ public class TennisSet {
 		if (playerBScore == 4 && playerAScore < 3) 
 			return "Player B wins !";
 		
-		if (playerAScore == playerBScore) {
-			score = equalityScore();
-		} else {
-			if (hasAPlayerAdvantage()) {
-				score = "Advantage " + advantagedPlayer();
-			} else {
-				score = translate(playerAScore) + " - " + translate(playerBScore);
-			}
-		}
-	
-		return score;
+		if (playerAScore == playerBScore) 
+			return equalityScore();
+
+		if (hasAPlayerAdvantage()) 
+			return "Advantage " + playerWithHighestScore();
+		
+		return  translate(playerAScore) + " - " + translate(playerBScore);
+	}
+
+	public void playerAScores() {
+		playerAScore++;
+	}
+
+	public void playerBScores() {
+		playerBScore++;
+	}
+
+	private String playerWithHighestScore() {
+		if (playerAScore > playerBScore)
+			return "Player A";
+		else
+			return "Player B";
+	}
+
+	private boolean hasAWinner() {
+		return (playerAScore == 4 && playerBScore < 3) ||(playerBScore == 4 && playerAScore < 3);
 	}
 
 	private String equalityScore() {
@@ -41,22 +58,7 @@ public class TennisSet {
 	private boolean hasAPlayerAdvantage() {
 		return playerAScore >= 4 || playerBScore >= 4;
 	}
-	
-	private String advantagedPlayer() {
-		if (playerAScore > playerBScore)
-			return "Player A";
-		else
-			return "Player B";
-	}
-
-	public void playerAScores() {
-		playerAScore++;
-	}
-
-	public void playerBScores() {
-		playerBScore++;
-	}
-	
+		
 	private String translate(int score) {
 		switch(score) {
 		case 0:
