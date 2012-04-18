@@ -10,12 +10,6 @@ public class TennisGame {
 		if (hasAWinner())
 			return playerWithHighestScore() + " wins !";
 		
-		if (playerAScore == 4 && playerBScore < 3) 
-			return "Player A wins !";
-		
-		if (playerBScore == 4 && playerAScore < 3) 
-			return "Player B wins !";
-		
 		if (playerAScore == playerBScore) 
 			return equalityScore();
 
@@ -41,7 +35,7 @@ public class TennisGame {
 	}
 
 	private boolean hasAWinner() {
-		return (playerAScore >= 4 || playerBScore >= 4) && (Math.abs(playerBScore - playerAScore) == 2);
+		return (playerAScore >= 4 || playerBScore >= 4) && (Math.abs(playerBScore - playerAScore) >= 2);
 	}
 
 	private String equalityScore() {
